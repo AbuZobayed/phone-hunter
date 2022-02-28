@@ -1,1 +1,3 @@
-console.log('done');
+const loadPhoneGallery = () => {
+    console.log("clicked");
+}
