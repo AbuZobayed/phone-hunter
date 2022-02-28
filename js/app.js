@@ -1,5 +1,8 @@
 const loadPhoneGallery = () => {
     const searchBox = document.getElementById('search-box').value;
+    searchBox.value = '';
+
+    
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchBox}`
 
     fetch(url)
@@ -10,10 +13,13 @@ const loadPhoneGallery = () => {
 };
 
 const displayPhones = (phones) =>{
+
+    const parentCard = document.getElementById('card-container');
+    parentCard.textContent = ''
     for(const phone of phones){
-        const parentCard = document.getElementById('card-container');
+        
         const div = document.createElement('div');
-        parentCard.textContent;
+       
         div.innerHTML = `
         <div class="col">
               <div class="card h-100">
