@@ -1,19 +1,26 @@
 const loadPhoneGallery = () => {
     const searchBox = document.getElementById('search-box').value;
-    searchBox.value = '';
+    if(searchBox == ''){
+        const crrorShow = document.getElementById('errormasg')
+        crrorShow.innerText='Not Fount'
+    }
 
-    
-    const url = `https://openapi.programming-hero.com/api/phones?search=${searchBox}`
+    else{
+        const url = `https://openapi.programming-hero.com/api/phones?search=${searchBox}`
 
-    fetch(url)
-    .then(res => res.json())
-    .then(data => displayPhones(data.data))
-    
+        fetch(url)
+        .then(res => res.json())
+        .then(data => displayPhones(data.data))
+    }
+
     
 };
 
 const displayPhones = (phones) =>{
-
+    if(phones.lenght == 0){
+         const errormag =document.getElementById('errormasg2');
+         errormag.innerText = ' phone is not available'
+    }
     const parentCard = document.getElementById('card-container');
     parentCard.textContent = ''
     for(const phone of phones){
