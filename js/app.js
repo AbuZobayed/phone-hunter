@@ -1,8 +1,9 @@
+// Search Box secton 
 const loadPhoneGallery = () => {
     const searchBox = document.getElementById('search-box').value;
     if(searchBox == ''){
         const crrorShow = document.getElementById('error-massages')
-        crrorShow.innerText='Not Fount'
+        crrorShow.innerText='please search your devices...'
     }
   
     else{
@@ -17,12 +18,12 @@ const loadPhoneGallery = () => {
     }
   
   };
-  
+    // displayPhones section 
   const displayPhones = (phones) =>{
     let phoneInfo = phones.data.slice(0,20);
     if(phoneInfo.length == 0){
         const crrorShow = document.getElementById('error-massages')
-        crrorShow.innerText=`Not Fount`
+        crrorShow.innerText=`This phone is not available!!`
     }
   
     else{
@@ -31,7 +32,7 @@ const loadPhoneGallery = () => {
         for(const phone of phoneInfo){
         
             const div = document.createElement('div');
-           
+        //    all phone  
             div.innerHTML = `
             <div class="col">
                   <div class="card h-100">
@@ -50,14 +51,14 @@ const loadPhoneGallery = () => {
     };
     
   };
-  
+//   phoneDetalis section 
   const phoneDetalis = info => {
     const url = `https://openapi.programming-hero.com/api/phone/${info}`
   
     fetch(url)
     .then(res => res.json())
-    .then(data => deriveDetails(data.data))
-    // console.log(info);
+    .then(data => deriveDetails(data.data));
+    
   };
   
   const deriveDetails = details => {
@@ -66,6 +67,8 @@ const loadPhoneGallery = () => {
     detailsimg.innerHTML = `
     <div class="d-block mx-auto image "> <img src="${details.image}" class="card-img-top" alt="..."> </div>
     `;
+
+    // phone detalis 
     const detailsInfo = document.getElementById('details-info');
     detailsInfo.innerHTML = `
     <tr>
@@ -77,6 +80,7 @@ const loadPhoneGallery = () => {
     <th scope="row">Release Date</th>
     <td>${details.releaseDate ?details.releaseDate :'No Release Date Found'}</td>
   </tr>
+
     <tr>
     <th scope="row">processor</th>
     <td>${details.mainFeatures.chipSet}</td>
@@ -94,7 +98,6 @@ const loadPhoneGallery = () => {
   <tr>
   <th scope="row">sensors</th>
   <td>${details.mainFeatures.sensors[0]} , ${details.mainFeatures.sensors[1]} , ${details.mainFeatures.sensors[2]} , ${details.mainFeatures.sensors[3]} , ${details.mainFeatures.sensors[4]}</td>
-  
 </tr>
     
   <tr>
@@ -106,13 +109,14 @@ const loadPhoneGallery = () => {
   <th scope="row">Memory</th>
   <td>${details.others.Memory}</td>
 </tr>
+
   <tr>
   <th scope="row">WLAN</th>
   <td>${details.others.WLAN}</td>
 </tr>
     
     `
-  }
+  };
 
 
 
