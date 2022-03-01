@@ -64,10 +64,27 @@ const loadPhoneGallery = () => {
     
     const detailsimg = document.getElementById('details-img');
     detailsimg.innerHTML = `
-    <img src="${details.image}" class="card-img-top" alt="...">
+    <div class="d-block mx-auto"> <img src="${details.image}" class="card-img-top" alt="..."> </div>
     `;
     const detailsInfo = document.getElementById('details-info');
     detailsInfo.innerHTML = `
-     <h6>Relese Date: ${details.releaseDate}
+    <p><span class="fw-bold">Release Date:</span> ${details.releaseDate}</P>
+    <h6 class="fw-bold">Main Features</h6>
+    <p><span class="fw-bold">ChipSet:</span> <small>${details.mainFeatures.chipSet}</small></P>
+    <p><span class="fw-bold">Display Size:</span> <small>${details.mainFeatures.displaySize}</small></P>
+    <p><span class="fw-bold">Memory:</span> <small>${details.mainFeatures.memory}</small></P>
+    <p><span class="fw-bold">Sensor:</span> <small>${details.mainFeatures.sensors}
+    <h6 class="fw-bold">Others</h6>
+    <p><span class="fw-bold">Bluetooth:</span> <small>${details.others.Bluetooth}
+    <p><span class="fw-bold">Bluetooth:</span> <small>${details.others.GPS}
+    <p><span class="fw-bold">Bluetooth:</span> <small>${details.others.NFC}
+    <p><span class="fw-bold">Bluetooth:</span> <small>${details.others.Radio}
+    <p><span class="fw-bold">Bluetooth:</span> <small>${details.others.USB}
+    <p><span class="fw-bold">Bluetooth:</span> <small>${details.others.WLAN}
+    <p><span class="fw-bold">Bluetooth:</span> <small>${details.others.releaseDate}
+    <p><span class="fw-bold">Bluetooth:</span> <small>${details.others.slug}
+    <p><span class="fw-bold">Bluetooth:</span> <small>${details.others.status}
+    
+
     `
   }
