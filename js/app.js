@@ -64,27 +64,56 @@ const loadPhoneGallery = () => {
     
     const detailsimg = document.getElementById('details-img');
     detailsimg.innerHTML = `
-    <div class="d-block mx-auto"> <img src="${details.image}" class="card-img-top" alt="..."> </div>
+    <div class="d-block mx-auto image "> <img src="${details.image}" class="card-img-top" alt="..."> </div>
     `;
     const detailsInfo = document.getElementById('details-info');
     detailsInfo.innerHTML = `
-    <p><span class="fw-bold">Release Date:</span> ${details.releaseDate}</P>
-    <h6 class="fw-bold">Main Features</h6>
-    <p><span class="fw-bold">ChipSet:</span> <small>${details.mainFeatures.chipSet}</small></P>
-    <p><span class="fw-bold">Display Size:</span> <small>${details.mainFeatures.displaySize}</small></P>
-    <p><span class="fw-bold">Memory:</span> <small>${details.mainFeatures.memory}</small></P>
-    <p><span class="fw-bold">Sensor:</span> <small>${details.mainFeatures.sensors}
-    <h6 class="fw-bold">Others</h6>
-    <p><span class="fw-bold">Bluetooth:</span> <small>${details.others.Bluetooth}
-    <p><span class="fw-bold">Bluetooth:</span> <small>${details.others.GPS}
-    <p><span class="fw-bold">Bluetooth:</span> <small>${details.others.NFC}
-    <p><span class="fw-bold">Bluetooth:</span> <small>${details.others.Radio}
-    <p><span class="fw-bold">Bluetooth:</span> <small>${details.others.USB}
-    <p><span class="fw-bold">Bluetooth:</span> <small>${details.others.WLAN}
-    <p><span class="fw-bold">Bluetooth:</span> <small>${details.others.releaseDate}
-    <p><span class="fw-bold">Bluetooth:</span> <small>${details.others.slug}
-    <p><span class="fw-bold">Bluetooth:</span> <small>${details.others.status}
+    <tr>
+    <th scope="row">Brand</th>
+    <td>${details.brand}</td>
+  </tr>
     
-
+    <tr>
+    <th scope="row">Release Date</th>
+    <td>${details.releaseDate ?details.releaseDate :'No Release Date Found'}</td>
+  </tr>
+    <tr>
+    <th scope="row">processor</th>
+    <td>${details.mainFeatures.chipSet}</td>
+  </tr>
+    
+    <tr>
+    <th scope="row">displaySize</th>
+    <td>${details.mainFeatures.displaySize}</td>
+  </tr>
+  
+  <tr>
+  <th scope="row">Memory</th>
+  <td>${details.others.Bluetooth}</td>
+</tr>
+  <tr>
+  <th scope="row">sensors</th>
+  <td>${details.mainFeatures.sensors[0]} , ${details.mainFeatures.sensors[1]} , ${details.mainFeatures.sensors[2]} , ${details.mainFeatures.sensors[3]} , ${details.mainFeatures.sensors[4]}</td>
+  
+</tr>
+    
+  <tr>
+  <th scope="row">GPS</th>
+  <td>${details.others.GPS}</td>
+</tr>
+    
+  <tr>
+  <th scope="row">Memory</th>
+  <td>${details.others.Memory}</td>
+</tr>
+  <tr>
+  <th scope="row">WLAN</th>
+  <td>${details.others.WLAN}</td>
+</tr>
+    
     `
   }
+
+
+
+  
