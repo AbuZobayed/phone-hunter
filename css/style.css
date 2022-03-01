@@ -1,0 +1,10 @@
+.card-section {
+    text-align: center;
+}
+
+.card-section img {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    margin-top: 20px;
+}
